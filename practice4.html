@@ -1,0 +1,31 @@
+<html>
+<body>
+<h1> Practice 4: PHP Multiplication Table </h1> <br>
+
+<label for="num"> Enter a number to create the table to: </label>
+<input type="number" id="num"> <br>
+
+<button type="button" onclick="Create()"> Create </button> <br> <br>
+
+<pre id="table"> </pre>
+
+<script>
+function Create() {
+	const NUM = document.getElementById("num").value;
+	
+	let output = '';
+
+	for (let i = 1; i <= NUM; i++) {
+		let line = '';
+
+		for (let j = 1; j <= NUM; j++) {
+			line += `${i * j}\t`; }
+		output += line.trim() + '\n';
+		}
+		
+		table.innerHTML = output;
+}
+</script>
+</body>
+</html>
+

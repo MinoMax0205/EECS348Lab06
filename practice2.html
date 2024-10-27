@@ -1,0 +1,73 @@
+<html>
+
+<h1> Practice 2: Flavorful Text! </h1>
+
+<body>
+<style>
+#Text {
+	border: solid 2px black;
+	padding: 10px;
+}
+</style>
+
+<p id ="Text">
+Hello, this is just some text that you, the user, should be able to mess with the colors and border for this paragraph. I really hope I code this right so I do not have to spend more time figuring out how to make this work because I want to spend my time doing other stuff.
+</p>
+</body>
+<br>
+
+<h1> Background/Paragraph Color </h1>
+<label for="r"> R: </label>
+<input type="number" id="r" min="0" max="255"> <br>
+
+<label for="g"> G: </label>
+<input type="number" id="g" min="0" max="255"> <br>
+
+<label for="b"> B: </label>
+<input type="number" id="b" min="0" max="255"> <br>
+
+<h1> Border Color </h1>
+<label for="r2"> R: </label>
+<input type="number" id="r2" min="0" max="255"> <br>
+
+<label for="g2"> G: </label>
+<input type="number" id="g2" min="0" max="255"> <br>
+
+<label for="b2"> B: </label>
+<input type="number" id="b2" min="0" max="255"> <br>
+
+<label for="w"> W: </label>
+<input type="number" id="w" min="0"> <br>
+
+<button type="button" onclick="Change()"> Change </button>
+
+<script>
+function Change() {
+	//These three are the inputs for background color
+
+	const r = document.getElementById("r").value;
+	const g = document.getElementById("g").value;
+	const b = document.getElementById("b").value;
+	
+	//These three are the inputs for border color
+	const r2 = document.getElementById("r2").value;
+	const g2 = document.getElementById("g2").value;
+	const b2 = document.getElementById("b2").value;
+	
+	//Border width input
+	const w = document.getElementById("w").value;
+
+	//Creates RGB strings to change the color to
+	const BackgroundColor = `rgb(${r}, ${g}, ${b})`;
+	const BorderColor = `rgb(${r2}, ${g2}, ${b2})`;
+	
+	//Lines responsible for changing color and width
+	const Text = document.getElementById("Text");
+	Text.style.backgroundColor = BackgroundColor;
+	Text.style.borderColor = BorderColor;
+	Text.style.borderWidth = w + "px";
+	
+}
+
+</script>
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<body>
+<h1> Practice 3: Password Verification </h1> <br>
+
+<label for="pw"> Password: </label>
+<input type="password" id="pw"> <br>
+
+<button type="button" onclick="Verify()"> Verify </button>
+<br> <br>
+
+<p id="message"> Set a password</p>
+
+<script>
+let first = true;
+let firstPW = "";
+
+function Verify() {
+	const PW = document.getElementById("pw").value;
+	const message = document.getElementById("message");
+
+	if (first) {
+		if (PW.length < 8) {
+			message.innerHTML = "Password is too short!";  }
+
+		else {
+			message.innerHTML = "Password is valid. Enter it again to confirm.";
+			firstPW = PW
+			first = false; }}
+
+	else {
+		if (PW.length < 8) {	
+			message.innerHTML = "Second password is too short."; }
+		else if (PW === firstPW) {
+			message.innerHTML = "Password confirmed.";
+			first = true;
+			firstPW = "";}
+		else {
+			message.innerHTML ="Passwords do not match."; } } 
+}
+
+</script>
+</body>
+</html>
