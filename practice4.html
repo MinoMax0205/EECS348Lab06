@@ -7,25 +7,29 @@
 
 <button type="button" onclick="Create()"> Create </button> <br> <br>
 
-<pre id="table"> </pre>
+<div id="table"> </div>
 
 <script>
 function Create() {
 	const NUM = document.getElementById("num").value;
 	
-	let output = '';
+	let output = '<table border ="1"> <tr> <td> </td>';
+	
+	for (let k = 1; k <= NUM; k++) {
+		output += `<td> ${k} </td>`; }
+	output += '</tr>';
 
 	for (let i = 1; i <= NUM; i++) {
-		let line = '';
-
+		output += `<tr><td> ${i} </td>`;
+	
 		for (let j = 1; j <= NUM; j++) {
-			line += `${i * j}\t`; }
-		output += line.trim() + '\n';
+			output += `<td> ${i * j} </td>`;
 		}
-		
-		table.innerHTML = output;
+		output += '</tr>';
+}
+	output += '</table>';
+	table.innerHTML = output; 
 }
 </script>
 </body>
 </html>
-
